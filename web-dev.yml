@@ -20,3 +20,6 @@ zuul:
     tens-qa:
       path: /qa/**
       serviceId: tens-qa
+    tens-user:
+      path: /user/**
+      serviceId: tens-user
