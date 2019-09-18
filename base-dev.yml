@@ -1,29 +1,21 @@
 server:
-  port: 9010
+  port: 9001
 
 spring:
   application:
-    name: tens‐gateway
+    name: tens-base
+  datasource:
+    url: jdbc:mysql://192.168.110.131:3306/tensquare_base?characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: rootswan
+  jpa:
+    database: mysql
+    show-sql: true
 
 eureka:
   client:
-    serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
-      defaultZone: http://127.0.0.1:7000/eureka/
+    service‐url:
+      defaultZone: http://localhost:7000/eureka   # 指定注册中心
     instance:
-      prefer‐ip‐address: true
-
-jwt:
-  config:
-    key: swan
-
-zuul:
-  routes:
-    tens-base:
-      path: /base/**
-      serviceId: tens-base
-    tens-qa:
-      path: /qa/**
-      serviceId: tens-qa
-    tens-user:
-      path: /user/**
-      serviceId: tens-user
+      prefer‐ip‐address: true   # 模块之间可以跨域访问
