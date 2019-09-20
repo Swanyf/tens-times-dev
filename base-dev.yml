@@ -18,6 +18,6 @@ spring:
 eureka:
   client:
     service‐url:
-      defaultZone: http://localhost:7000/eureka   # 指定注册中心
+      defaultZone: http://192.168.110.132:7000/eureka   # 指定注册中心
     instance:
       prefer‐ip‐address: true   # 模块之间可以跨域访问
